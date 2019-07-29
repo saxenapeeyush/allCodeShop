@@ -1,0 +1,107 @@
+<div ng-controller="alldeliveryboys-controller">
+    <div class="deliveryrow">
+        <div class="col">
+<button class="sortBtn" ng-click="getverifiedboys()" style="margin-left:120px;">Verified Delivery Boys</button> <br><br>
+<!-- {{verifiedboys}} -->
+<div class="limiter">
+    <div >
+        <div class="wrap-table100">
+            <div class="table100">
+                <table >
+                    <thead >
+                        <tr class="table100-head"  >
+                                <th  >Name</th>
+                                <th  >DOB</th>
+                                
+                               
+                                <th  >Address</th>
+                                <th  >Email</th>
+                                
+                                <th  >Proof</th>
+                                <th  > OPTIONS</th>
+                                </tr>
+                    </thead>
+                    <tbody>
+                      
+                              
+                           <tr ng-repeat="x in verifiedboys">
+                                    
+                            
+                                <td class="coloumn_1">{{x.firstName|uppercase}} {{x.lastName|uppercase}}</td>
+                                <td class="coloumn_1">{{x.dateOfBirth}}</td>
+                                <td class="coloumn_1">{{x.address1}} , {{x.address1}}</td>
+                                
+                                <td class="coloumn_1">{{x.emailId}}</td>
+                                    
+
+                                       
+                                    <td class="coloumn_1"> <button class="updateBtn" ng-click="clickToOpen(x.imageVerification.verificationImageUrl)">Identity Proof</button> <button class="updateBtn" ng-click="clickToOpen(x.imageVerification.policeVerification)">Police Verification</button></td>
+                                    <td class="coloumn_1"> <button class="updateBtn" ng-click="unverifyBoy(x.deliveryBoyId)">Unverify Delivery Boy</button></td>
+                            
+                         
+                           </tr>
+                            
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div> <br><br>
+<!-- 
+        </div><div class="vl"></div> -->
+        <div class="col"><button class="sortBtn" ng-click="getunverifiedboys()" style="margin-left:100px;">Unverified Delivery Boys</button> <br><br>
+        <!-- {{unverifiedboys}} -->
+        <div class="limiter">
+                <div >
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table >
+                                <thead >
+                                    <tr class="table100-head"  >
+                                            <th  >Name</th>
+                                            <th  >DOB</th>
+                                            
+                                           
+                                            <th  >Address</th>
+                                            <th  >Email</th>
+                                            
+                                            <th  >Proof</th>
+                                            <th  > OPTIONS</th>
+                                            </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                          
+                                       <tr ng-repeat="x in unverifiedboys">
+                                                
+                                        
+                                            <td class="coloumn_1">{{x.firstName|uppercase}} {{x.lastName|uppercase}}</td>
+                                            <td class="coloumn_1">{{x.dateOfBirth}}</td>
+                                            <td class="coloumn_1">{{x.address1}} , {{x.address1}}</td>
+                                            
+                                            <td class="coloumn_1">{{x.emailId}}</td>
+                                                
+        
+                                                   
+                                                <td class="coloumn_1"> <button class="updateBtn" ng-click="clickToOpen(x.imageVerification.verificationImageUrl)">Identity Proof</button> <button class="updateBtn" ng-click="clickToOpen(x.imageVerification.policeVerification)">Police Verification</button></td>
+
+                                                <td class="coloumn_1"> <button class="updateBtn" ng-click="verifyBoy(x.deliveryBoyId)">Verify Delivery Boy</button></td>
+                                        
+                                     
+                                    </tr>
+                                        
+                                </tbody>
+                            </table>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    </div>

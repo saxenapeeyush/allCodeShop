@@ -1,0 +1,93 @@
+<div ng-controller="customerorders-controller">
+       <!-- <h1>My orders</h1>
+    <div ng-repeat="x in allOrders">
+        {{x.orderDateAndTime
+        }}
+        <div ng-repeat="item in x.orderDetails">
+            {{item.productName}}
+            {{item.productBrand}}
+            
+             <img ng-src="{{item.prodImgUrl}}" alt=""> 
+
+        </div>
+    </div> -->
+
+
+
+        <!-- <div ng-show="!ifproducts" class="container">  <br>
+            <h2>SHOPPING CART IS EMPTY</h2>
+            <hr>
+  <p>You have no items in your shopping cart.</p>
+  <p>Click <a href="#/">here</a>  to continue shopping.</p>
+           </div>
+           <div > -->
+         <div class="container">
+            <div class="row marginTop">
+               <div class="col-9">
+                  <h1 class="topicShop">MY ORDERS</h1>
+               </div>
+               <!-- <div class="col-3">
+                  <a class="checkOut" ng-show="!isLoggedIn" href="#">PROCEED TO CHECKOUT</a>
+                  <a  class="checkOut" ng-show="isLoggedIn" href="#/customer/addressform">PROCEED TO CHECKOUT</a>
+                   <button class="checkOut"  ng-show="!isLoggedIn" ng-click="">PROCEED TO CHECKOUT</button>
+                    <button class="checkOut"  ng-show="isLoggedIn" ng-click="">PROCEED TO CHECKOUT</button> 
+               </div> -->
+            </div>
+         </div>
+     
+           <div class="container">
+              <div class="row cartTopic">
+                 <div class="col-4">
+                    <h6>ORDER DATE</h6>
+                 </div>
+                 
+                 <div class="col-3">
+                    <h6>STATUS</h6>
+                 </div>
+                 <div class="col-2">
+                    <h6>SUBTOTAL</h6>
+                 </div>
+                 <div class="col-3">
+                        <h6>VIEW ORDER Details</h6>
+                     </div>
+              </div>
+              <div class="cartItem" dir-paginate="x in allOrders |itemsPerPage:5">
+                    <div class="row">
+                            <div class="col-4 allDate">
+                               {{x.orderDateAndTime|date:'EEEE, MMM d, y'}}
+                               
+                            </div>
+                            <div class="col-3">
+                                    <p class="cartProductBrand">{{x.orderStatus|uppercase}}</p>
+                                   
+                            </div>
+                        <div class="col-2">
+                                <p><strong>{{x.orderBillingAmount|currency:"&#8377;"}}</strong></p>
+                                    </div>
+                                    <div class="col-3">
+                                        <a ng-href="#/customer/myorders/{{x.orderId
+                                        }}"><button class="checkOut">View Order <i class="fas fa-truck"></i></button></a>
+                                        <a ng-href="#/customer/trackorder/{{x.orderStatus
+                                        }}"><button class="checkOut" >Track Order <i class="fas fa-truck"></i></button></a>
+                                                </div>
+                   </div>
+                </div>
+              </div>
+              <div class="pagination">
+               <dir-pagination-controls></dir-pagination-controls>
+             </div>
+  
+           </div>
+           <div class="container-fluid">
+              <div class="row">
+                 <div class="col-12 emptyShopping">
+
+      <button > <a href="#/" style="text-decoration: none;"><button class="checkOut">Continue Shopping</button></a>
+         </button>
+                 </div>
+              </div>
+           </div>
+          </div>
+        </div>
+   </div>  
+</div>
